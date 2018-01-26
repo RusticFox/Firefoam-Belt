@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="ThingWithComps" ParentName="ApparelBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>9.9</explosiveRadius>
+        <explosiveDamageType>Extinguish</explosiveDamageType>
+        <startWickHitPointsPercent>-1</startWickHitPointsPercent>
+        <startWickOnDamageTaken>Flame</startWickOnDamageTaken>
+        <postExplosionSpawnThingDef>FilthFireFoam</postExplosionSpawnThingDef>
+        <postExplosionSpawnChance>1</postExplosionSpawnChance>
+        <postExplosionSpawnThingCount>3</postExplosionSpawnThingCount>
+        <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+        <explosionEffect>ExtinguisherExplosion</explosionEffect>
+      </li>
+      <li Class="CompProperties_Usable">
+        <useJob>TriggerFirefoamPopper</useJob>
+        <useLabel>Trigger firefoam popper</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>CompUseEffect_StartWick</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="ThingWithComps">
+    <defName>Apparel_FirefoampBelt</defName>
+    <thingClass>Apparel</thingClass>
+    <label>firefoam belt</label>
+    <description>An automatic firefoam belt. It will release a thick cloud of foam if the wearer is on fire Single-use.</description>
+    <techLevel>Industrial</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedBelt</unfinishedThingDef>
+      <researchPrerequisite>Firefoam</researchPrerequisite>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+    </recipeMaker>
+    <costList>
+      <Component>2</Component>
+      <Steel>100</Steel>
+    </costList>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/SmokepopBelt/SmokepopBelt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+      <Mass>3</Mass>
+      <SmokepopBeltRadius>4</SmokepopBeltRadius>
+    </statBases>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+		<generateAllowChance>0.15</generateAllowChance>
+    <apparel>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>RGBA(0.6,0.4,0.4,1)</only>
+        </li>
+        <li>
+          <weight>10</weight>
+          <only>RGBA(0.6,0.6,0.4,1)</only>
+        </li>
+        <li>
+          <weight>6</weight>
+          <min>RGBA(0.3,0.3,0.3,1)</min>
+          <max>RGBA(0.5,0.5,0.5,1)</max>
+        </li>
+        <li>
+          <weight>10</weight>
+          <only>RGBA(0.33,0.33,0.33,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+  
+</Defs>
