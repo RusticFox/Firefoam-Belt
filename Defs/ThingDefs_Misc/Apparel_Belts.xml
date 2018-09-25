@@ -9,7 +9,7 @@
         <explosiveDamageType>Extinguish</explosiveDamageType>
         <startWickHitPointsPercent>-1</startWickHitPointsPercent>
         <startWickOnDamageTaken>Flame</startWickOnDamageTaken>
-        <postExplosionSpawnThingDef>FilthFireFoam</postExplosionSpawnThingDef>
+        <postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>
         <postExplosionSpawnChance>1</postExplosionSpawnChance>
         <postExplosionSpawnThingCount>3</postExplosionSpawnThingCount>
         <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
@@ -26,7 +26,7 @@
   </ThingDef>
 
   <ThingDef ParentName="ThingWithComps">
-    <defName>Apparel_FirefoampBelt</defName>
+    <defName>Apparel_FirefoamBelt</defName>
     <thingClass>Apparel</thingClass>
     <label>firefoam belt</label>
     <description>An automatic firefoam belt. It will release a thick cloud of foam if the wearer is on fire Single-use.</description>
@@ -43,7 +43,7 @@
       <soundWorking>Recipe_Smith</soundWorking>
     </recipeMaker>
     <costList>
-      <Component>2</Component>
+      <ComponentIndustrial>2</ComponentIndustrial>
       <Steel>100</Steel>
     </costList>
     <graphicData>
